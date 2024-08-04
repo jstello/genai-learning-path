@@ -36,3 +36,14 @@ lesson_config = LessonConfig(name = None,
                              installing_datasets = True,
                              enable_streaming_support = False,
                              enable_ml_support = True)
+
+# Add these lines at the end of the file
+custom_catalog_name = "partner_data_catalog"
+custom_schema_name = "genie_lab"
+
+# Modify the DBAcademyHelper initialization to use custom catalog and schema
+def create_dbacademy_helper(lesson_config):
+    da = DBAcademyHelper(course_config, lesson_config)
+    da.catalog_name = custom_catalog_name
+    da.schema_name = custom_schema_name
+    return da

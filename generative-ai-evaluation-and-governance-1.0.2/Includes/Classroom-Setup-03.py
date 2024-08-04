@@ -4,10 +4,10 @@
 # COMMAND ----------
 
 DA = DBAcademyHelper(course_config, lesson_config)  # Create the DA object
-DA.reset_lesson()                                   # Reset the lesson to a clean state
+# DA.reset_lesson()                                   # Reset the lesson to a clean state
 DA.init()                                           # Performs basic init, schemas and catalogs
-spark.sql(f"USE CATALOG {DA.catalog_name}")
-spark.sql(f"USE SCHEMA {DA.schema_name}")
+spark.sql(f"USE CATALOG partner_data_catalog")
+spark.sql(f"USE SCHEMA genie_lab")
 
 # COMMAND ----------
 
